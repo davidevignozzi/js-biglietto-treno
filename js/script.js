@@ -12,19 +12,22 @@ age = parseInt(age)
 
 //RISULTATO E SCONTO
 var costo = (km) * 0.21;
+var costoFinale = costo.toFixed(2)
 console.log ('il prezzo del biglietto per ' + km + 'km, equivale a ' + costo + '€')
 
 if (age < 18) {
   var costoUnder = (costo * 0.80)
-  console.log ('il prezzo con lo sconto per i minorenni equivale a '+ costoUnder + '€')
+  var costoUnderFinale = costoUnder.toFixed(2)
+  console.log ('il prezzo con lo sconto per i minorenni equivale a '+ costoUnderFinale + '€')
   var prezzoFinale = document.getElementById('prezzo-finale')
-  prezzoFinale.innerText = 'Il prezzo del tuo biglietto è di ' + costoUnder + '€'
+  prezzoFinale.innerText = 'Il prezzo del tuo biglietto è di ' + costoUnderFinale + '€'
 } else if (age > 65) {
   var costoOver = (costo * 0.60)
-  console.log ('il prezzo con lo sconto anziani equivale a ' + costoOver + '€')
+  var costoOverFinale = costoOver.toFixed(2)
+  console.log ('il prezzo con lo sconto anziani equivale a ' + costoOverFinale + '€')
   var prezzoFinale = document.getElementById('prezzo-finale')
-  prezzoFinale.innerText = 'Il prezzo del tuo biglietto è di ' + costoOver + '€'
+  prezzoFinale.innerText = 'Il prezzo del tuo biglietto è di ' + costoOverFinale + '€'
 } else {
   var prezzoFinale = document.getElementById('prezzo-finale')
-  prezzoFinale.innerText = 'Il prezzo del tuo biglietto è di ' + costo + '€'
+  prezzoFinale.innerText = 'Il prezzo del tuo biglietto è di ' + costoFinale + '€'
 }
